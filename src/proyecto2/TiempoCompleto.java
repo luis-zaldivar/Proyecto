@@ -8,7 +8,7 @@ public class TiempoCompleto extends Docente{
     
 
  
-    public TiempoCompleto(int horas, String grado, int añosExperiencia, String Especialidad, String nombre, String domicilio, int telefono) {
+    public TiempoCompleto(int horas, String grado, int añosExperiencia, String Especialidad, String nombre, String domicilio, String telefono) {
         super(añosExperiencia, Especialidad, nombre, domicilio, telefono);
         this.horas = horas;
         this.grado = grado;

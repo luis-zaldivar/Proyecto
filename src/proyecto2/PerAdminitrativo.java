@@ -4,7 +4,7 @@ public class PerAdminitrativo extends Integrantes {
     protected int Antiguedad;
     private String Cargo;
 
-    public PerAdminitrativo(int Antiguedad, String Cargo, String nombre, String domicilio, int telefono) {
+    public PerAdminitrativo(int Antiguedad, String Cargo, String nombre, String domicilio, String telefono) {
         super(nombre, domicilio, telefono);
         this.Antiguedad = Antiguedad;
         this.Cargo = Cargo;

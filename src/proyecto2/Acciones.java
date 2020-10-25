@@ -6,15 +6,8 @@ import java.util.*;
 public class Acciones {
 
     boolean salir = false;
-    String nombre, domicilio, esp, grado, Especialidad, lic, nom, domi, sin, dom, cargo, cont, turno, car, hora, lav;
-    int tel, años, horas, añosExperiencia, numMaterias, numero, ant, edad, numtel, num, opcion;
-    float sueldo;
-    DeAsignatura data = new DeAsignatura(turno, numMaterias, añosExperiencia, Especialidad, nombre, domicilio, tel);
-    TiempoCompleto datos = new TiempoCompleto(horas, grado, años, esp, nombre, domicilio, tel);
-    Alumno alu = new Alumno(numero, lic, nom, domi, num);
-    Sindicalizado sindicato = new Sindicalizado(sin, sueldo, ant, cargo, nombre, dom, num);
-    DeConfianza confianza = new DeConfianza(cont, edad, ant, car, nom, dom, num);
-    Directivos dire = new Directivos(hora, lav, ant, car, nom, domi, numtel);
+
+    int opcion;
 
     Scanner scan = new Scanner(System.in);
     BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
@@ -26,28 +19,23 @@ public class Acciones {
     ArrayList<Directivos> directivos = new ArrayList<>();
 
     public void AgrgarDocente() throws IOException {
-        System.out.print("Docente de tiempo completo\n ");
+        System.out.print("Docente de tiempo completo \n");
         System.out.print("Ingresar nombre completo: ");
-        nombre = entrada.readLine();
-        datos.setNombre(nombre);
+        String nombre = entrada.readLine();
         System.out.print("Ingresa domicilio: ");
-        domicilio = entrada.readLine();
-        datos.setDomicilio(domicilio);
+        String domicilio = entrada.readLine();
         System.out.print("Ingresa telefono: ");
-        tel = scan.nextInt();
-        datos.setTelefono(tel);
+        String tel = entrada.readLine();
         System.out.print("Ingresa los años de experiencia: ");
-        años = scan.nextInt();
-        datos.setAñosExperiencia(años);
+        int años = scan.nextInt();
         System.out.print("Ingresa la especialidad: ");
-        esp = entrada.readLine();
-        datos.setEspecialidad(esp);
+        String esp = entrada.readLine();
+        //prof1.setEspecialidad(esp);
         System.out.print("Ingresa las horas de trabajo: ");
-        horas = scan.nextInt();
-        datos.setHoras(horas);
+        int horas = scan.nextInt();
         System.out.print("Ingresa el grado de preparacion: ");
-        grado = entrada.readLine();
-        datos.setGrado(grado);
+        String grado = entrada.readLine();
+        TiempoCompleto datos = new TiempoCompleto(horas, grado, años, esp, nombre, domicilio, tel);
         listaTiempoCompleto.add(datos);
         System.out.print("El registro fue exitoso");
     }
@@ -55,26 +43,20 @@ public class Acciones {
     public void AgregarDocenteAsignatura() throws IOException {
         System.out.print("Docente de Asignatura \n");
         System.out.print("Ingresar nombre completo: ");
-        nombre = entrada.readLine();
-        data.setNombre(nombre);
+        String nombre = entrada.readLine();
         System.out.print("Ingresa domicilio: ");
-        domicilio = entrada.readLine();
-        data.setDomicilio(domicilio);
+        String domicilio = entrada.readLine();
         System.out.print("Ingresa telefono: ");
-        tel = scan.nextInt();
-        data.setTelefono(tel);
+        String tel = entrada.readLine();
         System.out.print("Ingresa los años de experiencia: ");
-        añosExperiencia = scan.nextInt();
-        data.setAñosExperiencia(añosExperiencia);
+        int añosExperiencia = scan.nextInt();
         System.out.print("Ingresa la especialidad: ");
-        Especialidad = entrada.readLine();
-        data.setEspecialidad(Especialidad);
+        String Especialidad = entrada.readLine();
         System.out.print("Ingresa el numero de materias: ");
-        numMaterias = scan.nextInt();
-        data.setNumMaterias(numMaterias);
+        int numMaterias = scan.nextInt();
         System.out.print("Ingresa el turno: ");
-        turno = entrada.readLine();
-        data.setTurno(turno);
+        String turno = entrada.readLine();
+        DeAsignatura data = new DeAsignatura(turno, numMaterias, añosExperiencia, Especialidad, nombre, domicilio, tel);
         listaAsignatura.add(data);
         System.out.print("El registro fue exitoso");
     }
@@ -82,20 +64,16 @@ public class Acciones {
     public void AgregarAlumno() throws IOException {
         System.out.print("Alta alumnos\n");
         System.out.print("Inserte el nuero de cuenta: ");
-        numero = scan.nextInt();
-        alu.setNumCuenta(numero);
+        int numero = scan.nextInt();
         System.out.print("Inserte la licenciatura: ");
-        lic = entrada.readLine();
-        alu.setLicenciatura(lic);
+        String lic = entrada.readLine();
         System.out.print("ingrese el nombre: ");
-        nom = entrada.readLine();
-        alu.setNombre(nom);
+        String nom = entrada.readLine();
         System.out.print("Ingrese el domicilio: ");
-        domi = entrada.readLine();
-        alu.setDomicilio(domi);
+        String domi = entrada.readLine();
         System.out.print("Inserte un numero de telefono: ");
-        num = scan.nextInt();
-        alu.setTelefono(num);
+        String num = entrada.readLine();
+        Alumno alu = new Alumno(numero, lic, nom, domi, num);
         Alumnos.add(alu);
         System.out.print("El registro fue exitoso");
     }
@@ -103,26 +81,20 @@ public class Acciones {
     public void AgregarSindicato() throws IOException {
         System.out.println("Personal del sindicato");
         System.out.print("Inserte el sindicato afiliado: ");
-        sin = entrada.readLine();
-        sindicato.setSindicato(sin);
+        String sin = entrada.readLine();
         System.out.print("Inserte el sueldo: ");
-        sueldo = scan.nextFloat();
-        sindicato.setSueldo(sueldo);
+        float sueldo = scan.nextFloat();
         System.out.print("Inserte los años de antiguedad: ");
-        ant = scan.nextInt();
-        sindicato.setAntiguedad(edad);
+        int ant = scan.nextInt();
         System.out.print("Inerte el cargo: ");
-        cargo = entrada.readLine();
-        sindicato.setCargo(cargo);
+        String cargo = entrada.readLine();
         System.out.print("Insrte e nombre: ");
-        nombre = entrada.readLine();
-        sindicato.setNombre(nombre);
+        String nombre = entrada.readLine();
         System.out.print("Insrte el domicilio: ");
-        dom = entrada.readLine();
-        sindicato.setDomicilio(dom);
+        String dom = entrada.readLine();
         System.out.print("Inserte el numero de telefono: ");
-        num = scan.nextInt();
-        sindicato.setTelefono(num);
+        String num = entrada.readLine();
+        Sindicalizado sindicato = new Sindicalizado(sin, sueldo, ant, cargo, nombre, dom, num);
         Sindicatos.add(sindicato);
         System.out.print("El registro fue exitoso");
     }
@@ -130,26 +102,20 @@ public class Acciones {
     public void AgregarConfianza() throws IOException {
         System.out.println("Personal de confianza");
         System.out.print("tiempo de contrato");
-        cont = entrada.readLine();
-        confianza.setContrato(cont);
+        String cont = entrada.readLine();
         System.out.print("Inserte la edad: ");
-        edad = scan.nextInt();
-        confianza.setEdad(edad);
+        int edad = scan.nextInt();
         System.out.print("Inserte la antiguedad: ");
-        ant = scan.nextInt();
-        confianza.setAntiguedad(ant);
+        int ant = scan.nextInt();
         System.out.print("Inserte el cargo: ");
-        car = entrada.readLine();
-        confianza.setCargo(car);
+        String car = entrada.readLine();
         System.out.print("Inserte el nombre: ");
-        nom = entrada.readLine();
-        confianza.setNombre(nom);
+        String nom = entrada.readLine();
         System.out.print("Insrte el domicilio: ");
-        dom = entrada.readLine();
-        confianza.setDomicilio(dom);
+        String dom = entrada.readLine();
         System.out.print("Inserte un numero telefonico: ");
-        num = scan.nextInt();
-        confianza.setTelefono(num);
+        String num = entrada.readLine();
+        DeConfianza confianza = new DeConfianza(cont, edad, ant, car, nom, dom, num);
         confi.add(confianza);
         System.out.print("El registro fue exitoso");
     }
@@ -157,26 +123,20 @@ public class Acciones {
     public void AgrearDirectivos() throws IOException {
         System.out.println("Directivos");
         System.out.print("Inserte el horario: ");
-        hora = entrada.readLine();
-        dire.setHorario(hora);
+        String hora = entrada.readLine();
         System.out.print("Inserte su labor principal: ");
-        lav = entrada.readLine();
-        dire.setLaborprincipal(lav);
+        String lav = entrada.readLine();
         System.out.print("Inserte los años de antiguedad: ");
-        ant = scan.nextInt();
-        dire.setAntiguedad(ant);
+        int ant = scan.nextInt();
         System.out.print("Inserte el cargo: ");
-        car = entrada.readLine();
-        dire.setCargo(car);
+        String car = entrada.readLine();
         System.out.print("Insertar el nombre: ");
-        nom = entrada.readLine();
-        dire.setNombre(nom);
+        String nom = entrada.readLine();
         System.out.print("Inserte el domicilio: ");
-        domi = entrada.readLine();
-        dire.setDomicilio(dom);
+        String domi = entrada.readLine();
         System.out.print("Inserte el numero telefonico");
-        numtel = scan.nextInt();
-        dire.setTelefono(numtel);
+        String numtel = entrada.readLine();
+        Directivos dire = new Directivos(hora, lav, ant, car, nom, domi, numtel);
         directivos.add(dire);
         System.out.print("El registro fue exitoso");
     }
@@ -216,7 +176,10 @@ public class Acciones {
     public void mostraPTC(int indice) {
         if (indice >= 0) {
             if (indice <= listaTiempoCompleto.size() - 1) {
-                System.out.println("Datos:\nNombre: "+listaTiempoCompleto.get(indice).getNombre());
+                System.out.println("Datos:\nNombre: " + listaTiempoCompleto.get(indice).getNombre() + " domicilio: " + listaTiempoCompleto.get(indice).getDomicilio()
+                        + "  telefono: " + listaTiempoCompleto.get(indice).getTelefono() + " Años Experiencia: " + listaTiempoCompleto.get(indice).getAñosExperiencia()
+                        + " Epecialidad: " + listaTiempoCompleto.get(indice).getEspecialidad() + " Horas Trabajo: " + listaTiempoCompleto.get(indice).getHoras()
+                        + " Grado: " + listaTiempoCompleto.get(indice).getGrado());
             } else {
                 System.out.println("no existe nada en esa posicion");
             }
@@ -224,23 +187,62 @@ public class Acciones {
     }
 
     public void motrarAS(int indice) {
-
+        if (indice >= 0) {
+            if (indice <= listaAsignatura.size() - 1) {
+                System.out.println("Datos:\nNombre: " + listaAsignatura.get(indice).getNombre() + " domicilio: " + listaAsignatura.get(indice).getDomicilio()
+                        + " Telefono: " + listaAsignatura.get(indice).getTelefono() + " Años Experiencia: " + listaAsignatura.get(indice).getAñosExperiencia()
+                        + " Especialidad: " + listaAsignatura.get(indice).getEspecialidad() + " Matrias: " + listaAsignatura.get(indice).getNumMaterias() + " turno:"
+                        + listaAsignatura.get(indice).getTurno());
+            } else {
+                System.out.println("no existe nada en esa posicion");
+            }
+        }
     }
 
     public void mostrarAl(int indice) {
-
+        if (indice >= 0) {
+            if (indice <= Alumnos.size() - 1) {
+                System.out.println("Datos:\nNo.Cuenta: " + Alumnos.get(indice).getNumCuenta() + " licenciatura: " + Alumnos.get(indice).getLicenciatura()
+                        + " nombre: " + Alumnos.get(indice).getNombre() + " Domicilio: " + Alumnos.get(indice).getDomicilio() + " Telefono: " + Alumnos.get(indice).getTelefono());
+            } else {
+                System.out.println("no existe nada en esa posicion");
+            }
+        }
     }
 
     public void mostarSin(int indice) {
-
+        if (indice >= 0) {
+            if (indice <= Sindicatos.size() - 1) {
+                System.out.println("Datos:\nSindicato: " + Sindicatos.get(indice).getSindicato() + " sueldo: " + Sindicatos.get(indice).getSueldo() + "  Años Antiguedad: "
+                        + Sindicatos.get(indice).getAntiguedad() + " cargo: " + Sindicatos.get(indice).getCargo() + " nombre: " + Sindicatos.get(indice).getNombre()
+                        + " Domicilio: " + Sindicatos.get(indice).getDomicilio() + " tel: " + Sindicatos.get(indice).getTelefono());
+            } else {
+                System.out.println("no existe nada en esa posicion");
+            }
+        }
     }
 
     public void mostrarCon(int indice) {
-
+        if (indice >= 0) {
+            if (indice <= confi.size() - 1) {
+                System.out.println("Datos:\nTiempo Contrato: " + confi.get(indice).getContrato() + " edad: " + confi.get(indice).getEdad() + " Antiguedad: " + confi.get(indice).getAntiguedad()
+                        + " cargo: " + confi.get(indice).getCargo() + " nombre: " + confi.get(indice).getNombre() + " domicilio: " + confi.get(indice).getDomicilio() + " tel: " + confi.get(indice).getTelefono());
+            } else {
+                System.out.println("no existe nada en esa posicion");
+            }
+        }
     }
 
     public void MostrarDir(int indice) {
-
+        if (indice >= 0) {
+            if (indice <= directivos.size() - 1) {
+                System.out.println("Datos:\nHorario: " + directivos.get(indice).getHorario() + " labor: " + directivos.get(indice).getLaborprincipal()
+                        + " años de antiguedad: " + directivos.get(indice).getAntiguedad()+" cargo: "+directivos.get(indice).getCargo()+" nombre: "
+                +directivos.get(indice).getNombre()+" domicilio: "+directivos.get(indice).getDomicilio()+" Tel: "+directivos.get(indice).getTelefono());
+            } else {
+                System.out.println("no existe nada en esa posicion");
+            }
+        }
     }
 
     public void EliPTC(int xd) {

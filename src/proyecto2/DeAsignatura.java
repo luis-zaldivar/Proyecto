@@ -4,7 +4,7 @@ public class DeAsignatura extends Docente {
     public String turno;
     private int numMaterias;
 
-    public DeAsignatura(String turno, int numMaterias, int añosExperiencia, String Especialidad, String nombre, String domicilio, int telefono) {
+    public DeAsignatura(String turno, int numMaterias, int añosExperiencia, String Especialidad, String nombre, String domicilio, String telefono) {
         super(añosExperiencia, Especialidad, nombre, domicilio, telefono);
         this.turno = turno;
         this.numMaterias = numMaterias;

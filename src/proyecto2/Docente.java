@@ -9,7 +9,7 @@ public class Docente extends Integrantes {
     
 
     
-    public Docente(int añosExperiencia, String Especialidad, String nombre, String domicilio, int telefono) {
+    public Docente(int añosExperiencia, String Especialidad, String nombre, String domicilio, String telefono) {
         super(nombre, domicilio, telefono);
         this.añosExperiencia = añosExperiencia;
         this.Especialidad = Especialidad;

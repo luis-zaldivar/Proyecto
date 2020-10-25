@@ -5,7 +5,7 @@ public class Sindicalizado extends PerAdminitrativo {
     protected String sindicato;
     private float sueldo;
 
-    public Sindicalizado(String sindicato, float sueldo, int Antiguedad, String Cargo, String nombre, String domicilio, int telefono) {
+    public Sindicalizado(String sindicato, float sueldo, int Antiguedad, String Cargo, String nombre, String domicilio, String telefono) {
         super(Antiguedad, Cargo, nombre, domicilio, telefono);
         this.sindicato = sindicato;
         this.sueldo = sueldo;

@@ -4,7 +4,7 @@ public class DeConfianza extends PerAdminitrativo {
     private String contrato;
     protected  int edad;
 
-    public DeConfianza(String contrato, int edad, int Antiguedad, String Cargo, String nombre, String domicilio, int telefono) {
+    public DeConfianza(String contrato, int edad, int Antiguedad, String Cargo, String nombre, String domicilio, String telefono) {
         super(Antiguedad, Cargo, nombre, domicilio, telefono);
         this.contrato = contrato;
         this.edad = edad;

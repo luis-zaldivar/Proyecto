@@ -2,9 +2,9 @@ package proyecto2;
 public class Integrantes {
     public String nombre;
     protected String domicilio;
-    private int telefono; 
+    private String telefono; 
 
-    public Integrantes(String nombre, String domicilio, int telefono) {
+    public Integrantes(String nombre, String domicilio, String telefono) {
         this.nombre = nombre;
         this.domicilio = domicilio;
         this.telefono = telefono;
@@ -26,14 +26,15 @@ public class Integrantes {
         this.domicilio = domicilio;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
+
+        
     
 }
 

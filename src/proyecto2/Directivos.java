@@ -4,7 +4,7 @@ public class Directivos extends PerAdminitrativo{
         protected String Horario;
         public String laborprincipal;
 
-    public Directivos(String Horario, String laborprincipal, int Antiguedad, String Cargo, String nombre, String domicilio, int telefono) {
+    public Directivos(String Horario, String laborprincipal, int Antiguedad, String Cargo, String nombre, String domicilio, String  telefono) {
         super(Antiguedad, Cargo, nombre, domicilio, telefono);
         this.Horario = Horario;
         this.laborprincipal = laborprincipal;
