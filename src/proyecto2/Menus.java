@@ -172,27 +172,27 @@ public class Menus {
             case 2:
                 System.out.println("inserte la posicion");
                 indi = scan.nextInt();
-                accionx.motrarAS(indi);
+                accionx.EliAs(indi);
                 return;
             case 3:
                 System.out.println("inserte la posicion");
                 indi = scan.nextInt();
-                accionx.mostrarAl(indi);
+                accionx.EliAl(indi);
                 return;
             case 4:
                 System.out.println("inserte la posicion");
                 indi = scan.nextInt();
-                accionx.mostarSin(indi);
+                accionx.Elisin(indi);
                 return;
             case 5:
                 System.out.println("inserte la posicion");
                 indi = scan.nextInt();
-                accionx.mostrarCon(indi);
+                accionx.eliCon(indi);
                 return;
             case 6:
                 System.out.println("inserte la posicion");
                 indi = scan.nextInt();
-                accionx.MostrarDir(indi);
+                accionx.eliDi(indi);
                 return;
             case 7:
                 return;
